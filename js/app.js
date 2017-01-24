@@ -14,7 +14,11 @@ var color = $(".selected").css("background-color");//initial color when page loa
 
 
 //When new color is pressed
- //Show color selected
+$("#revealColorSelect").click(function(){
+  //Show color selected or hide it
+  $("#colorSelect").toggle();
+});
+ 
 
 //When color sliders changes
  //Update the new color span
