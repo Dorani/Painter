@@ -16,12 +16,21 @@ var color = $(".selected").css("background-color");//initial color when page loa
 //When new color is pressed
 $("#revealColorSelect").click(function(){
   //Show color selected or hide it
+  changeColor();//calling the change color
   $("#colorSelect").toggle();
 });
- 
 
+function changeColor() {
+  var r = $("#red").val();
+  var g = $("#green").val();
+  var b = $("#blue").val();
+
+  $("#newColor").css("background-color", "rgb("+ r + ", " + g + ", " + b + ")"); //update the new color
+  //Update the new color span
+}
 //When color sliders changes
- //Update the new color span
+$("input[type=range]").change(changeColor);//update when its changed
+
 
 //When new color is pressed
  //Append the color to the controls ul
