@@ -31,10 +31,18 @@ function changeColor() {
 //When color sliders changes
 $("input[type=range]").change(changeColor);//update when its changed
 
+//When "add color" is pressed
+$("#addNewColor").click(function(){
+  //Append the color to the controls ul
+  var $newColor = $("<li></li>");
+  $newColor.css("background-color", $("#newColor").css("background-color"));
+  //append new color
+  $(".controls ul").append($newColor);
+  //Select the new color
+  $newColor.click();
+});
 
-//When new color is pressed
- //Append the color to the controls ul
- //Select the new color
+
 
 //On mouse event on the canvas
  //Draw lines
