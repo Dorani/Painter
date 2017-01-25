@@ -3,7 +3,7 @@
 
 var color = $(".selected").css("background-color");//initial color when page loads
   //when clicking on control list items
-  $(".controls li").on("click",function(){
+  $(".controls").on("click", "li", function(){
     //Deselect sibling elements
     $(this).siblings().removeClass("selected");//grab sibling, remove class selected
     //Select clicked element
