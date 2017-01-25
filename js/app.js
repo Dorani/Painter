@@ -5,7 +5,7 @@ var color = $(".selected").css("background-color");//initial color when page loa
 var $canvas = $("canvas");
 var context = $canvas[0].getContext("2d"); //context is a way for the computer to know where to draw for this particular canvas elements
 var lastEvent;
-var mouseDown = false; //when application loads the mouse is NOT down
+var mouseDown = false; //when application loads the mouse is NOT down, therefore false.
   //when clicking on control list items
   $(".controls").on("click", "li", function(){
     //Deselect sibling elements
