@@ -16,7 +16,6 @@ var mouseDown = false; //when application loads the mouse is NOT down, therefore
     color = $(this).css("background-color");//cashe color to be used in the future
   });
 
-
 //When new color is pressed
 $("#revealColorSelect").click(function(){
   //Show color selected or hide it
@@ -46,7 +45,7 @@ $("#addNewColor").click(function(){
   $newColor.click();
 });
 
-//document.getElementByTagName("canvas")[0]/ //above is a simply Jquery version
+//document.getElementByTagName("canvas")[0]/ //above(global var area) is a simply Jquery version
 
 //On mouse event on the canvas
 $canvas.mousedown(function(e){
