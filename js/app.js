@@ -2,6 +2,8 @@
 //Solution: When user interacts cause changes
 
 var color = $(".selected").css("background-color");//initial color when page loads
+var context = $("canvas")[0].getContext("2d"); //context is a way for the computer to know where to draw for this particular canvas elements
+
   //when clicking on control list items
   $(".controls").on("click", "li", function(){
     //Deselect sibling elements
@@ -42,7 +44,11 @@ $("#addNewColor").click(function(){
   $newColor.click();
 });
 
-
+//document.getElementByTagName("canvas")[0]/ //above is a simply Jquery version
 
 //On mouse event on the canvas
  //Draw lines
+ context.beginPath(); // in the context we want to start a path
+ context.moveTo(10, 10); //virtual pen we are asking to move to an area x and y coordinate
+ context.lineTo(20, 10);
+ context.stroke();
