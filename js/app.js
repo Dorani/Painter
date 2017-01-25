@@ -5,6 +5,7 @@ var color = $(".selected").css("background-color");//initial color when page loa
 var $canvas = $("canvas");
 var context = $canvas[0].getContext("2d"); //context is a way for the computer to know where to draw for this particular canvas elements
 var lastEvent;
+var mouseDown = false; //when application loads the mouse is NOT down
   //when clicking on control list items
   $(".controls").on("click", "li", function(){
     //Deselect sibling elements
@@ -50,10 +51,17 @@ $("#addNewColor").click(function(){
 //On mouse event on the canvas
 $canvas.mousedown(function(e){
   lastEvent = e;
+  mouseDown = true;
 }).mousemove(function(e){
   //Draw lines
-  context.beginPath(); // in the context we want to start a path
-  context.moveTo(lastEvent.offsetX, lastEvent.offsetY); //virtual pen we are asking to move to an area x and y coordinate
-  context.lineTo(e.offsetX, e.offsetY);
-  context.stroke();// draw a line from the above coordinates
+  if(mouseDown){ //if you are clicking and dragging, excute this code
+    context.beginPath(); // in the context we want to start a path
+    context.moveTo(lastEvent.offsetX, lastEvent.offsetY); //virtual pen we are asking to move to an area x and y coordinate
+    context.lineTo(e.offsetX, e.offsetY);
+    context.strokeStyle = color; // appropriate color is used for drawing.
+    context.stroke();// draw a line from the above coordinates
+    lastEvent = e;
+}
+}).mouseup(function(){
+    mouseDown = false;
 });
